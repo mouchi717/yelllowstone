@@ -1,3 +1,39 @@
-group 'mouchi717'
-version '1.0-SNAPSHOT'
+buildscript {
+    ext {
+        kotlin_version = '1.3.41'
+        junit_version = '5.5.1'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        // Kotlin
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-noarg:$kotlin_version"
+    }
+}
 
+subprojects {
+    apply plugin: 'org.jetbrains.kotlin.jvm'
+
+    repositories {
+        mavenCentral()
+    }
+
+    sourceCompatibility = '11'
+
+    compileKotlin {
+        kotlinOptions {
+            freeCompilerArgs = ['-Xjsr305=strict']
+            jvmTarget = "1.8"
+        }
+    }
+
+    compileTestKotlin {
+        kotlinOptions {
+            freeCompilerArgs = ['-Xjsr305=strict']
+            jvmTarget = "1.8"
+        }
+    }
+}
