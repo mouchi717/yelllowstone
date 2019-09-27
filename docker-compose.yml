@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  db:
+    container_name: mysql
+    build: ./docker/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_ROOT_PASSWORD:
+    volumes:
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
