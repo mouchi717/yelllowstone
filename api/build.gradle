@@ -1,13 +1,24 @@
 dependencies {
-
+    // for Kotlin
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
-
+    // for Spring Boot
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-
+    // JUnit
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude module: 'junit' // for JUnit5
     }
     testImplementation "org.junit.jupiter:junit-jupiter:$junit_version"
+    // for Cucumber
+    testImplementation "io.cucumber:cucumber-java8:$cucumber_version"
+    testImplementation "io.cucumber:cucumber-junit:$cucumber_version"
+}
+
+task runScenarioTest(type: Test) {
+    include("**/RunCucumber.class")
+}
+
+task runScenarioTestOnlyNow(type: Test) {
+    include("**/RunCucumberNow.class")
 }
