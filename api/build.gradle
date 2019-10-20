@@ -13,6 +13,8 @@ dependencies {
     // for Cucumber
     testImplementation "io.cucumber:cucumber-java8:$cucumber_version"
     testImplementation "io.cucumber:cucumber-junit:$cucumber_version"
+    // for Selenium
+    testImplementation "org.seleniumhq.selenium:selenium-java:$selenium_version"
 }
 
 task runScenarioTest(type: Test) {

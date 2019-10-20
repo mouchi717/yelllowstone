@@ -4,6 +4,7 @@ buildscript {
         junit_version = '5.5.1'
         spring_boot_version = '2.1.8.RELEASE'
         cucumber_version = '4.7.1'
+        selenium_version = '3.141.59'
     }
     repositories {
         mavenCentral()
