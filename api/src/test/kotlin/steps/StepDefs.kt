@@ -1,11 +1,8 @@
 package steps
 
 import AbstractStepDefs
-import io.cucumber.java8.En
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.openqa.selenium.By
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.support.ui.WebDriverWait
 
 class StepDefs : AbstractStepDefs() {
 
